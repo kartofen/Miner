@@ -1,0 +1,9 @@
+F:\repos\Console\Miner\Lib\bin\Debug\netstandard2.0\Lib.deps.json
+F:\repos\Console\Miner\Lib\bin\Debug\netstandard2.0\Lib.dll
+F:\repos\Console\Miner\Lib\bin\Debug\netstandard2.0\Lib.pdb
+F:\repos\Console\Miner\Lib\obj\Debug\netstandard2.0\Lib.csprojAssemblyReference.cache
+F:\repos\Console\Miner\Lib\obj\Debug\netstandard2.0\Lib.AssemblyInfoInputs.cache
+F:\repos\Console\Miner\Lib\obj\Debug\netstandard2.0\Lib.AssemblyInfo.cs
+F:\repos\Console\Miner\Lib\obj\Debug\netstandard2.0\Lib.csproj.CoreCompileInputs.cache
+F:\repos\Console\Miner\Lib\obj\Debug\netstandard2.0\Lib.dll
+F:\repos\Console\Miner\Lib\obj\Debug\netstandard2.0\Lib.pdb
