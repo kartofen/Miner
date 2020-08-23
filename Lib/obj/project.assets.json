@@ -185,11 +185,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\repos\\Console\\Miner\\Lib\\Lib.csproj",
+      "projectUniqueName": "F:\\GitRepos\\Console\\Miner\\Lib\\Lib.csproj",
       "projectName": "Lib",
-      "projectPath": "F:\\repos\\Console\\Miner\\Lib\\Lib.csproj",
+      "projectPath": "F:\\GitRepos\\Console\\Miner\\Lib\\Lib.csproj",
       "packagesPath": "C:\\Users\\112\\.nuget\\packages\\",
-      "outputPath": "F:\\repos\\Console\\Miner\\Lib\\obj\\",
+      "outputPath": "F:\\GitRepos\\Console\\Miner\\Lib\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\112\\AppData\\Roaming\\NuGet\\NuGet.Config",

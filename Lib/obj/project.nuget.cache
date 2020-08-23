@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wJF6Kv8gHfMPosu/mNrX4w0deBHYSLq9n8chCiJb9ORNj4tHp2H6qLc9ZFoiSuEucYVsFuVZ+7eeHveoQ4IbXA==",
+  "dgSpecHash": "Jla1wny+Ch90izShuZMiTTw5LXpW8MOCWKoSvCTNHwaU1i5L7cHVwajw4wF4pt5TqUJYY5dy9MpMOnVH1d8fzA==",
   "success": true,
-  "projectFilePath": "F:\\repos\\Console\\Miner\\Lib\\Lib.csproj",
+  "projectFilePath": "F:\\GitRepos\\Console\\Miner\\Lib\\Lib.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\112\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\112\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

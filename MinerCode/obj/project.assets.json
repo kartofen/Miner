@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\repos\\Console\\Miner\\MinerCode\\Miner.csproj",
+      "projectUniqueName": "F:\\GitRepos\\Console\\Miner\\MinerCode\\Miner.csproj",
       "projectName": "Miner",
-      "projectPath": "F:\\repos\\Console\\Miner\\MinerCode\\Miner.csproj",
+      "projectPath": "F:\\GitRepos\\Console\\Miner\\MinerCode\\Miner.csproj",
       "packagesPath": "C:\\Users\\112\\.nuget\\packages\\",
-      "outputPath": "F:\\repos\\Console\\Miner\\MinerCode\\obj\\",
+      "outputPath": "F:\\GitRepos\\Console\\Miner\\MinerCode\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\112\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -52,8 +52,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "F:\\repos\\Console\\Miner\\Lib\\Lib.csproj": {
-              "projectPath": "F:\\repos\\Console\\Miner\\Lib\\Lib.csproj"
+            "F:\\GitRepos\\Console\\Miner\\Lib\\Lib.csproj": {
+              "projectPath": "F:\\GitRepos\\Console\\Miner\\Lib\\Lib.csproj"
             }
           }
         }

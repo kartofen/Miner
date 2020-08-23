@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SNBhf0b4ZWIbuRyoyFgqZyxQZ3No9+wWeUI03HeZMvY1l4Wqo+bOpwMg20h35sWCbbohKthJ4g8sqhAfixrcwA==",
+  "dgSpecHash": "WISTWJE//H7nVCNWcpQUwBRavoWj+Gb+DnESwQDQEiViTn/tXsfQqExtMMf1neQZiNl6VtIcvgz0vC0jLHjjRg==",
   "success": true,
-  "projectFilePath": "F:\\repos\\Console\\Miner\\MinerCode\\Miner.csproj",
+  "projectFilePath": "F:\\GitRepos\\Console\\Miner\\MinerCode\\Miner.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

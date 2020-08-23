@@ -27,60 +27,34 @@ namespace Lib
             items[j] = temp;
             }
         }
-
-        [DllImport("kernel32.dll", SetLastError = true)]
-        static extern IntPtr GetStdHandle(int nStdHandle);
-
-    	[DllImport("kernel32.dll", SetLastError = true)]
-        static extern bool ReadConsoleOutputCharacter(
-        IntPtr hConsoleOutput, 
-        [Out] StringBuilder lpCharacter, 
-        uint length, 
-        COORD bufferCoord, 
-        out uint lpNumberOfCharactersRead);
-
-        [StructLayout(LayoutKind.Sequential)]
-        public struct COORD
+        public static void ReplaceLayers(string[] source, string[] destination)
         {
-            public short X;
-            public short Y;
+            Array.Copy(source, 0, destination, 0, 10);
         }
 
-        public static char ReadCharacterAt(int x, int y)
+        public static int Points(string where)
         {
-            IntPtr consoleHandle = GetStdHandle(-11);
-            if (consoleHandle == IntPtr.Zero)
+            switch(where)
             {
-                return '\0';
-            }
-            COORD position = new COORD
-            {
-                X = (short)x,
-                Y = (short)y
-            };
-            StringBuilder result = new StringBuilder(1);
-            uint read = 0;
-            if (ReadConsoleOutputCharacter(consoleHandle, result, 1, position, out read))
-            {
-                return result[0];
-            }
-            else
-            {
-                return '\0';
+                case "■":
+                    return 50;
+                case "▬":
+                    return -30;
+                case "▲":
+                    return 100;
+                case "▼":
+                    return 250;
+                default:
+                    return 0;
             }
         }
-        public static void WriteAt(string s, int x, int y)
+        public static bool IfLayerIsX(string layer)
         {
-            try
+            if (layer == "x")
             {
-                Console.SetCursorPosition(x, y);
-                Console.Write(s);
+                return true;
             }
-            catch (ArgumentOutOfRangeException e)
-            {
-                Console.Clear();
-                Console.WriteLine(e.Message);
-            }
+            else{return false;}
         }
     }
 }

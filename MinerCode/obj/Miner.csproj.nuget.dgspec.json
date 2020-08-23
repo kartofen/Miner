@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\repos\\Console\\Miner\\MinerCode\\Miner.csproj": {}
+    "F:\\GitRepos\\Console\\Miner\\MinerCode\\Miner.csproj": {}
   },
   "projects": {
-    "F:\\repos\\Console\\Miner\\Lib\\Lib.csproj": {
+    "F:\\GitRepos\\Console\\Miner\\Lib\\Lib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\repos\\Console\\Miner\\Lib\\Lib.csproj",
+        "projectUniqueName": "F:\\GitRepos\\Console\\Miner\\Lib\\Lib.csproj",
         "projectName": "Lib",
-        "projectPath": "F:\\repos\\Console\\Miner\\Lib\\Lib.csproj",
+        "projectPath": "F:\\GitRepos\\Console\\Miner\\Lib\\Lib.csproj",
         "packagesPath": "C:\\Users\\112\\.nuget\\packages\\",
-        "outputPath": "F:\\repos\\Console\\Miner\\Lib\\obj\\",
+        "outputPath": "F:\\GitRepos\\Console\\Miner\\Lib\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\112\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -59,14 +59,14 @@
         }
       }
     },
-    "F:\\repos\\Console\\Miner\\MinerCode\\Miner.csproj": {
+    "F:\\GitRepos\\Console\\Miner\\MinerCode\\Miner.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\repos\\Console\\Miner\\MinerCode\\Miner.csproj",
+        "projectUniqueName": "F:\\GitRepos\\Console\\Miner\\MinerCode\\Miner.csproj",
         "projectName": "Miner",
-        "projectPath": "F:\\repos\\Console\\Miner\\MinerCode\\Miner.csproj",
+        "projectPath": "F:\\GitRepos\\Console\\Miner\\MinerCode\\Miner.csproj",
         "packagesPath": "C:\\Users\\112\\.nuget\\packages\\",
-        "outputPath": "F:\\repos\\Console\\Miner\\MinerCode\\obj\\",
+        "outputPath": "F:\\GitRepos\\Console\\Miner\\MinerCode\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\112\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -82,8 +82,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "F:\\repos\\Console\\Miner\\Lib\\Lib.csproj": {
-                "projectPath": "F:\\repos\\Console\\Miner\\Lib\\Lib.csproj"
+              "F:\\GitRepos\\Console\\Miner\\Lib\\Lib.csproj": {
+                "projectPath": "F:\\GitRepos\\Console\\Miner\\Lib\\Lib.csproj"
               }
             }
           }
