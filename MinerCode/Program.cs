@@ -1,11 +1,22 @@
 ﻿using System;
+using System.Drawing;
+using Console = Colorful.Console;
 
 namespace Miner
 {
     class Program
     {
         //todo find friends
-        //todo chage the color of mines
+
+        /*tonotdo
+            chage the color of mines using Colorful Console package,
+            chage the color of mines when writing to the screen,
+            add with "dotnet add package Colorful.Console --version 1.2.11",
+            site of package "http://colorfulconsole.com/"
+            nuget site "https://www.nuget.org/packages/Colorful.Console"
+        */
+
+        //todo make starting animation, change ascii Miner, in site http://patorjk.com/software/taag/#p=display&f=Big&t=Miner
         public static string[] layer2a = {" ", " ", "M", "i", "n", "e", "r", " ", " ", " "};
         public static string[] layer1a = {" ", " ", " ", " ", " ", " ", " ", " ", " ", " "};
         public static string[] layer0a = {"_", "_", "_", "_", "_", "_", "_", "_", "_", "_"};
@@ -42,19 +53,19 @@ namespace Miner
             while (1<2)
             {
                 Console.Clear();
-                Coloring();
-                Console.WriteLine("         Miner                HighScore:" + highscore);
-                Console.WriteLine(" _____________________");
-                Console.WriteLine("|" +" "+ "                    " +""+ "|");
-                Console.WriteLine("|" +" "+ Lib.Class1.WriteingLayers(layer2a) +" "+ "|");
-                Console.WriteLine("|" +" "+ Lib.Class1.WriteingLayers(layer1a) +" "+ "|");
-                Console.WriteLine("|" +" "+ Lib.Class1.WriteingLayers(layer0a) +" "+ "|");
-                Console.WriteLine("|" +" "+ Lib.Class1.WriteingLayers(layer0) +" "+ "|");
-                Console.WriteLine("|" +" "+ Lib.Class1.WriteingLayers(layer1) +" "+ "|");
-                Console.WriteLine("|" +" "+ Lib.Class1.WriteingLayers(layer2) +" "+ "|");
-                Console.WriteLine("|" +" "+ Lib.Class1.WriteingLayers(layer3) +" "+ "|");
-                Console.WriteLine("|" +" "+ Lib.Class1.WriteingLayers(layer4) +" "+ "|");
-                Console.WriteLine("|_____________________|");
+                Console.WriteAscii("         Miner");
+                Console.WriteLine("");
+                Lib.Class1.CenteringText("HighScore:" + highscore);
+                Lib.Class1.CenteringText("┌─────────────────────┐");
+                Lib.Class1.CenteringText("│" +" "+ Lib.Class1.WriteingLayers(layer2a) +" "+ "│");
+                Lib.Class1.CenteringText("│" +" "+ Lib.Class1.WriteingLayers(layer1a) +" "+ "│");
+                Lib.Class1.CenteringText("│" +" "+ Lib.Class1.WriteingLayers(layer0a) +" "+ "│");
+                Lib.Class1.CenteringText("│" +" "+ Lib.Class1.WriteingLayers(layer0) +" "+ "│");
+                Lib.Class1.CenteringText("│" +" "+ Lib.Class1.WriteingLayers(layer1) +" "+ "│");
+                Lib.Class1.CenteringText("│" +" "+ Lib.Class1.WriteingLayers(layer2) +" "+ "│");
+                Lib.Class1.CenteringText("│" +" "+ Lib.Class1.WriteingLayers(layer3) +" "+ "│");
+                Lib.Class1.CenteringText("│" +" "+ Lib.Class1.WriteingLayers(layer4) +" "+ "│");
+                Lib.Class1.CenteringText("└─────────────────────┘");
                 Console.WriteLine("");
                 IfYouAreDead();
                 AcceptInput();       
@@ -177,99 +188,59 @@ namespace Miner
         }
         static void OnEnd()
         {
-            Console.WriteLine("You are dead");
+            Lib.Class1.CenteringText("You are dead");
             Console.ReadLine();
             Console.Clear();
             Environment.Exit(0);
-        }
-        static void Coloring()
-        {
-            for(var i = 0; i < layer0.Length; i++)
-            {
-                if(layer2a[i] == "*")
-                {
-                    
-                }
-                if(layer1a[i] == "*")
-                {
-                    
-                }
-                if(layer0a[i] == "*")
-                {
-                    
-                }
-                if(layer0[i] == "*")
-                {
-
-                }
-                if(layer1[i] == "*")
-                {
-                    //Console.ForegroundColor = System.ConsoleColor.Red;
-                    //layer1[1] = "*";
-                    //Console.ResetColor();
-                }
-                if(layer2[i] == "*")
-                {
-                    
-                }
-                if(layer3[i] == "*")
-                {
-                    
-                }
-                if(layer4[i] == "*")
-                {
-                    
-                }
-            }
         }
         static void HowToPlay()
         {
             Console.CursorVisible = false;
             Console.Clear();
-            Console.WriteLine("        Miner");
-            Console.WriteLine(" _______________________ ");
-            Console.WriteLine("|                       |");
-            Console.WriteLine("| Move with the arrows  |");
-            Console.WriteLine("|                       |");
-            Console.WriteLine("| The objects give you  |");
-            Console.WriteLine("| points                |");
-            Console.WriteLine("|                       |");
-            Console.WriteLine("|  Coal(■) - gives 50   |");
-            Console.WriteLine("| points                |");
-            Console.WriteLine("|                       |");
-            Console.WriteLine("|  Iron(▲) - gives 100  |");  
-            Console.WriteLine("| points                |");
-            Console.WriteLine("|                       |");
-            Console.WriteLine("|  Mercury(▬) - removes |");
-            Console.WriteLine("| 10 points             |");
-            Console.WriteLine("|                       |");
-            Console.WriteLine("|  Diamonds(▼) - gives  |");
-            Console.WriteLine("| 250 points            |");
-            Console.WriteLine("|                       |");
-            Console.WriteLine("|  Mines(*) - kills you |");
-            Console.WriteLine("| when you are near it  |");
-            Console.WriteLine("|                       |");
-            Console.WriteLine("|  The Player(x) - you, |");
-            Console.WriteLine("| the player            |");
-            Console.WriteLine("|                       |");
-            Console.WriteLine("|_______________________|");
+            Console.WriteAscii("         Miner");
+            Lib.Class1.CenteringText("┌───────────────────────┐");
+            Lib.Class1.CenteringText("│                       │");
+            Lib.Class1.CenteringText("│ Move with the arrows  │");
+            Lib.Class1.CenteringText("│                       │");
+            Lib.Class1.CenteringText("│ The objects give you  │");
+            Lib.Class1.CenteringText("│ points                │");
+            Lib.Class1.CenteringText("│                       │");
+            Lib.Class1.CenteringText("│  Coal(■) - gives 50   │");
+            Lib.Class1.CenteringText("│ points                │");
+            Lib.Class1.CenteringText("│                       │");
+            Lib.Class1.CenteringText("│  Iron(▲) - gives 100  │");  
+            Lib.Class1.CenteringText("│ points                │");
+            Lib.Class1.CenteringText("│                       │");
+            Lib.Class1.CenteringText("│  Mercury(▬) - removes │");
+            Lib.Class1.CenteringText("│ 30 points             │");
+            Lib.Class1.CenteringText("│                       │");
+            Lib.Class1.CenteringText("│  Diamonds(▼) - gives  │");
+            Lib.Class1.CenteringText("│ 250 points            │");
+            Lib.Class1.CenteringText("│                       │");
+            Lib.Class1.CenteringText("│  Mines(*) - kills you │");
+            Lib.Class1.CenteringText("│ when you are near it  │");
+            Lib.Class1.CenteringText("│                       │");
+            Lib.Class1.CenteringText("│  The Player(x) - you, │");
+            Lib.Class1.CenteringText("│ the player            │");
+            Lib.Class1.CenteringText("│                       │");
+            Lib.Class1.CenteringText("└───────────────────────┘");
             Console.ReadLine();
-            Main(layer0);
-            Console.WriteLine("");
+            Menu();
             return;
         }
         static void Menu()
         {
             Console.CursorVisible = false;
             Console.Clear();
-            Console.WriteLine("        Miner");
-            Console.WriteLine(" _____________________ ");
-            Console.WriteLine("|                     |");
-            Console.WriteLine("| 1 - Start The Game  |");
-            Console.WriteLine("| 2 - How to play     |");
-            Console.WriteLine("|                     |");
-            Console.WriteLine("|_____________________|");
+            Console.WriteAscii("         Miner");
+            Lib.Class1.CenteringText("┌────────────────────┐");
+            Lib.Class1.CenteringText("│                    │");
+            Lib.Class1.CenteringText("│ 1 - Start The Game │");
+            Lib.Class1.CenteringText("│ 2 - How to play    │");
+            Lib.Class1.CenteringText("│                    │");
+            Lib.Class1.CenteringText("└────────────────────┘");
             Console.WriteLine("");
+
             string input = Console.ReadLine();
             if (input == "1")
             {

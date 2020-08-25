@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Text;
-
+using Console = Colorful.Console;
+using System.Drawing;
 namespace Lib
 {
     public class Class1
@@ -16,9 +17,6 @@ namespace Lib
         public static void Randomize<T>(T[] items)
         {
             Random rand = new Random();
-
-        // For each spot in the array, pick
-        // a random item to swap into that spot.
             for (int i = 0; i < items.Length - 1; i++)
             {
             int j = rand.Next(i, items.Length);
@@ -55,6 +53,11 @@ namespace Lib
                 return true;
             }
             else{return false;}
+        }
+
+        public static void CenteringText(string text)
+        {
+            Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (text.Length / 2)) + "}", text));
         }
     }
 }

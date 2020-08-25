@@ -43,3 +43,4 @@ F:\GitRepos\Console\Miner\MinerCode\obj\Debug\netcoreapp3.1\Miner.csproj.CopyCom
 F:\GitRepos\Console\Miner\MinerCode\obj\Debug\netcoreapp3.1\Miner.dll
 F:\GitRepos\Console\Miner\MinerCode\obj\Debug\netcoreapp3.1\Miner.pdb
 F:\GitRepos\Console\Miner\MinerCode\obj\Debug\netcoreapp3.1\Miner.genruntimeconfig.cache
+F:\GitRepos\Console\Miner\MinerCode\bin\Debug\netcoreapp3.1\Colorful.Console.dll
