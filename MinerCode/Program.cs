@@ -1,92 +1,116 @@
 ﻿using System;
-using System.Drawing;
-using Console = Colorful.Console;
+using Lib;
 
-namespace Miner
+namespace MinerGame
 {
     class Program
     {
         //todo find friends
+        
+        //!! dockerizing not working
 
-        /*tonotdo
-            chage the color of mines using Colorful Console package,
-            chage the color of mines when writing to the screen,
-            add with "dotnet add package Colorful.Console --version 1.2.11",
-            site of package "http://colorfulconsole.com/"
-            nuget site "https://www.nuget.org/packages/Colorful.Console"
-        */
+        static string[] layer2a = {" ", " ", "M", "i", "n", "e", "r", " ", " ", " "};
+        static string[] layer1a = {" ", " ", " ", " ", " ", " ", " ", " ", " ", " "};
+        static string[] layer0a = {"_", "_", "_", "_", "_", "_", "_", "_", "_", "_"};
+        static string[] layer0 = { "x", "0", "0", "0", "0", "0", "0", "0", "0", "0"};
+        static string[] layer1 = { "■", "▬", "▲", "0", "0", "0", "0", "0", "0", "0"};
+        static string[] layer2 = { "■", "▬", "▲", "0", "0", "0", "0", "0", "0", "0"};
+        static string[] layer3 = { "■", "▬", "▲", "*", "0", "0", "0", "0", "0", "0"};
+        static string[] layer4 = { "■", "▬", "▲", "0", "0", "0", "0", "0", "0", "0"};
 
-        //todo make starting animation, change ascii Miner, in site http://patorjk.com/software/taag/#p=display&f=Big&t=Miner
-        public static string[] layer2a = {" ", " ", "M", "i", "n", "e", "r", " ", " ", " "};
-        public static string[] layer1a = {" ", " ", " ", " ", " ", " ", " ", " ", " ", " "};
-        public static string[] layer0a = {"_", "_", "_", "_", "_", "_", "_", "_", "_", "_"};
-        public static string[] layer0 = { "x", "0", "0", "0", "0", "0", "0", "0", "0", "0"};
-        public static string[] layer1 = { "■", "▬", "▲", "0", "0", "0", "0", "0", "0", "0"};
-        public static string[] layer2 = { "■", "▬", "▲", "0", "0", "0", "0", "0", "0", "0"};
-        public static string[] layer3 = { "■", "▬", "▲", "*", "0", "0", "0", "0", "0", "0"};
-        public static string[] layer4 = { "■", "▬", "▲", "0", "0", "0", "0", "0", "0", "0"};
+        static string[] layer5 = { "■", "▬", "▲", "*", "0", "0", "0", "0", "0", "0"};
+        static string[] layer6 = { "■", "▬", "▲", "■", "0", "0", "0", "0", "0", "0"};
+        static string[] layer7 = { "■", "▬", "▲", "*", "0", "0", "0", "0", "0", "0"};
+        static string[] layer8 = { "■", "▬", "▲", "■", "0", "0", "0", "0", "0", "0"};
+        static string[] layer9 = { "■", "▬", "▲", "▼", "*", "0", "0", "0", "0", "0"};
 
-        public static string[] layer5 = { "■", "▬", "▲", "*", "0", "0", "0", "0", "0", "0"};
-        public static string[] layer6 = { "■", "▬", "▲", "■", "0", "0", "0", "0", "0", "0"};
-        public static string[] layer7 = { "■", "▬", "▲", "*", "0", "0", "0", "0", "0", "0"};
-        public static string[] layer8 = { "■", "▬", "▲", "■", "0", "0", "0", "0", "0", "0"};
-        public static string[] layer9 = { "■", "▬", "▲", "▼", "*", "0", "0", "0", "0", "0"};
-
-        public static string[] layer10 = { "■", "▬", "▲", "*", "0", "0", "0", "0", "0", "0"};
-        public static string[] layer11 = { "■", "▬", "▲", "■", "0", "0", "0", "0", "0", "0"};
-        public static string[] layer12 = { "■", "▬", "▲", "*", "0", "0", "0", "0", "0", "0"};
-        public static string[] layer13 = { "■", "▬", "▲", "■", "0", "0", "0", "0", "0", "0"};
-        public static string[] layer14 = { "■", "▬", "▲", "▼", "*", "0", "0", "0", "0", "0"};
-        public static int highscore;
-        public static int currentPosition = 0;
-        public static bool AreYouDead;
+        static string[] layer10 = { "■", "▬", "▲", "*", "0", "0", "0", "0", "0", "0"};
+        static string[] layer11 = { "■", "▬", "▲", "■", "0", "0", "0", "0", "0", "0"};
+        static string[] layer12 = { "■", "▬", "▲", "*", "0", "0", "0", "0", "0", "0"};
+        static string[] layer13 = { "■", "▬", "▲", "■", "0", "0", "0", "0", "0", "0"};
+        static string[] layer14 = { "■", "▬", "▲", "▼", "*", "0", "0", "0", "0", "0"};
+        static int highscore;
+        static int currentPosition = 0;
+        static bool AreYouDead_;
 
 
         static void Main(string[] args)
         {
+            Console.CursorVisible = false;
             Menu();
+
+            Miner.Randomize(layer1);
+            Miner.Randomize(layer2);
+            Miner.Randomize(layer3);
+            Miner.Randomize(layer4);
+            Miner.Randomize(layer5);
+            Miner.Randomize(layer6);
+            Miner.Randomize(layer7);
+            Miner.Randomize(layer8);
+            Miner.Randomize(layer9);
+            Start();
         }
         
         static void Start()
         {
-            Console.CursorVisible = false;
             while (1<2)
             {
                 Console.Clear();
-                Console.WriteAscii("         Miner");
+                Colorful.Console.WriteAscii("         Miner");
                 Console.WriteLine("");
-                Lib.Class1.CenteringText("HighScore:" + highscore);
-                Lib.Class1.CenteringText("┌─────────────────────┐");
-                Lib.Class1.CenteringText("│" +" "+ Lib.Class1.WriteingLayers(layer2a) +" "+ "│");
-                Lib.Class1.CenteringText("│" +" "+ Lib.Class1.WriteingLayers(layer1a) +" "+ "│");
-                Lib.Class1.CenteringText("│" +" "+ Lib.Class1.WriteingLayers(layer0a) +" "+ "│");
-                Lib.Class1.CenteringText("│" +" "+ Lib.Class1.WriteingLayers(layer0) +" "+ "│");
-                Lib.Class1.CenteringText("│" +" "+ Lib.Class1.WriteingLayers(layer1) +" "+ "│");
-                Lib.Class1.CenteringText("│" +" "+ Lib.Class1.WriteingLayers(layer2) +" "+ "│");
-                Lib.Class1.CenteringText("│" +" "+ Lib.Class1.WriteingLayers(layer3) +" "+ "│");
-                Lib.Class1.CenteringText("│" +" "+ Lib.Class1.WriteingLayers(layer4) +" "+ "│");
-                Lib.Class1.CenteringText("└─────────────────────┘");
+                Miner.CenterText("HighScore:" + highscore);
+                Miner.CenterText("┌─────────────────────┐");
+                Miner.CenterText(Miner.WriteLayers(layer2a));
+                Miner.CenterText(Miner.WriteLayers(layer1a));
+                Miner.CenterText(Miner.WriteLayers(layer0a));
+                Miner.CenterText(Miner.WriteLayers(layer0));
+                Miner.CenterText(Miner.WriteLayers(layer1));
+                Miner.CenterText(Miner.WriteLayers(layer2));
+                Miner.CenterText(Miner.WriteLayers(layer3));
+                Miner.CenterText(Miner.WriteLayers(layer4));
+                Miner.CenterText("└─────────────────────┘");
                 Console.WriteLine("");
-                IfYouAreDead();
-                AcceptInput();       
+
+                AreYouDead();
+                AcceptInput();    
             }
         }
-        static void PointsGiving(string from_where)
+        
+        static void AreYouDead()
         {
-            switch(from_where)
+            for(var i = 0; i < layer0.Length; i++)
             {
-                case "left":
-                    highscore = highscore + Lib.Class1.Points(layer0[currentPosition - 1]);
-                break;
-                case "right":
-                    highscore = highscore + Lib.Class1.Points(layer0[currentPosition + 1]);
-                break;
-                case "down":
-                    highscore = highscore + Lib.Class1.Points(layer1[currentPosition]);
-                break;
+                if(layer0a[i] == "*")
+                {
+                    AreYouDead_= Miner.IfLayerIsX(layer0[i]);
+                    if(AreYouDead_== true)
+                    {OnEnd();}
+                }
+                if(layer0[i] == "*")
+                {
+                    if(i != 0)
+                    {
+                        AreYouDead_= Miner.IfLayerIsX(layer0[i-1]);
+                        if(AreYouDead_== true)
+                        {OnEnd();}
+                    }
+                    if(i != 9)
+                    {
+                        AreYouDead_= Miner.IfLayerIsX(layer0[i+1]);
+                        if(AreYouDead_== true)
+                        {OnEnd();}
+                    }
+                }
+                if(layer1[i] == "*")
+                {
+                    AreYouDead_= Miner.IfLayerIsX(layer0[i]);
+                    if(AreYouDead_== true)
+                    {OnEnd();}
+                }
             }
             return;
         }
+        
         static void AcceptInput()
         {
             var key = Console.ReadKey();
@@ -95,7 +119,7 @@ namespace Miner
                 case ConsoleKey.LeftArrow:
                     if(currentPosition > 0)
                     {
-                        PointsGiving("left");
+                        AddPoints("left");
                         layer0[currentPosition] = " ";
                         currentPosition--;
                         layer0[currentPosition] = "x";
@@ -104,160 +128,90 @@ namespace Miner
                 case ConsoleKey.RightArrow:
                     if(currentPosition < 9)
                     {
-                        PointsGiving("right");
+                        AddPoints("right");
                         layer0[currentPosition] = " ";
                         currentPosition++;
                         layer0[currentPosition] = "x";
                     }
                 break;
                 case ConsoleKey.DownArrow:
-                    PointsGiving("down");
+                    AddPoints("down");
                     layer0[currentPosition] = " ";
                     DownArrow();
                 break;
             }
             return;
         }
+        
+        
 
         static void DownArrow()
         {
-            Lib.Class1.ReplaceLayers(layer1a, layer2a);
-            Lib.Class1.ReplaceLayers(layer0a, layer1a);
-            Lib.Class1.ReplaceLayers(layer0, layer0a);
-            Lib.Class1.ReplaceLayers(layer1, layer0);
-            Lib.Class1.ReplaceLayers(layer2, layer1);
-            Lib.Class1.ReplaceLayers(layer3, layer2);
-            Lib.Class1.ReplaceLayers(layer4, layer3);
-            Random r = new Random();
-            int randIndex = r.Next(10);
-            if (layer4[randIndex] == layer5[randIndex])
-            {
-                Lib.Class1.Randomize(layer10);
-                Lib.Class1.Randomize(layer11);
-                Lib.Class1.Randomize(layer12);
-                Lib.Class1.Randomize(layer13);
-                Lib.Class1.Randomize(layer14);
-                Lib.Class1.ReplaceLayers(layer10, layer5);
-                Lib.Class1.ReplaceLayers(layer11, layer6);
-                Lib.Class1.ReplaceLayers(layer12, layer7);
-                Lib.Class1.ReplaceLayers(layer13, layer8);
-                Lib.Class1.ReplaceLayers(layer14, layer9);
-            }
-            Lib.Class1.ReplaceLayers(layer5, layer4);
-            Lib.Class1.ReplaceLayers(layer6, layer5);
-            Lib.Class1.ReplaceLayers(layer7, layer6);
-            Lib.Class1.ReplaceLayers(layer8, layer7);
-            Lib.Class1.ReplaceLayers(layer9, layer8);
+            Miner.ReplaceLayers(layer1a, layer2a);
+            Miner.ReplaceLayers(layer0a, layer1a);
+            Miner.ReplaceLayers(layer0, layer0a);
+            Miner.ReplaceLayers(layer1, layer0);
+            Miner.ReplaceLayers(layer2, layer1);
+            Miner.ReplaceLayers(layer3, layer2);
+            Miner.ReplaceLayers(layer4, layer3);
+
+            Miner.RandomizeLayers(layer4, layer5, layer6, layer7, layer8, layer9, layer10, layer11, layer12, layer13, layer14);
+
+            Miner.ReplaceLayers(layer5, layer4);
+            Miner.ReplaceLayers(layer6, layer5);
+            Miner.ReplaceLayers(layer7, layer6);
+            Miner.ReplaceLayers(layer8, layer7);
+            Miner.ReplaceLayers(layer9, layer8);
+
             layer0[currentPosition] = "x";
             return;
         }
 
-        static void IfYouAreDead()
+        static void AddPoints(string from_where)
         {
-            for(var i = 0; i < layer0.Length; i++)
+            switch(from_where)
             {
-                if(layer0[i] == "*")
-                {
-                    if(i != 0)
-                    {
-                        AreYouDead = Lib.Class1.IfLayerIsX(layer0[i-1]);
-                        if(AreYouDead == true)
-                        {OnEnd();}
-                    }
-                    if(i != 9)
-                    {
-                        AreYouDead = Lib.Class1.IfLayerIsX(layer0[i+1]);
-                        if(AreYouDead == true)
-                        {OnEnd();}
-                    }
-                }
-                if(layer0a[i] == "*")
-                {
-                    AreYouDead = Lib.Class1.IfLayerIsX(layer0[i]);
-                    if(AreYouDead == true)
-                    {OnEnd();}
-                }
-                if(layer1[i] == "*")
-                {
-                    AreYouDead = Lib.Class1.IfLayerIsX(layer0[i]);
-                    if(AreYouDead == true)
-                    {OnEnd();}
-                }
+                case "left":
+                    highscore = highscore + Miner.GivePoints(layer0[currentPosition - 1]);
+                break;
+                case "right":
+                    highscore = highscore + Miner.GivePoints(layer0[currentPosition + 1]);
+                break;
+                case "down":
+                    highscore = highscore + Miner.GivePoints(layer1[currentPosition]);
+                break;
             }
             return;
         }
+
         static void OnEnd()
         {
-            Lib.Class1.CenteringText("You are dead");
+            Miner.CenterText("You are dead");
             Console.ReadLine();
+
             Console.Clear();
             Environment.Exit(0);
         }
-        static void HowToPlay()
-        {
-            Console.CursorVisible = false;
-            Console.Clear();
-            Console.WriteAscii("         Miner");
-            Lib.Class1.CenteringText("┌───────────────────────┐");
-            Lib.Class1.CenteringText("│                       │");
-            Lib.Class1.CenteringText("│ Move with the arrows  │");
-            Lib.Class1.CenteringText("│                       │");
-            Lib.Class1.CenteringText("│ The objects give you  │");
-            Lib.Class1.CenteringText("│ points                │");
-            Lib.Class1.CenteringText("│                       │");
-            Lib.Class1.CenteringText("│  Coal(■) - gives 50   │");
-            Lib.Class1.CenteringText("│ points                │");
-            Lib.Class1.CenteringText("│                       │");
-            Lib.Class1.CenteringText("│  Iron(▲) - gives 100  │");  
-            Lib.Class1.CenteringText("│ points                │");
-            Lib.Class1.CenteringText("│                       │");
-            Lib.Class1.CenteringText("│  Mercury(▬) - removes │");
-            Lib.Class1.CenteringText("│ 30 points             │");
-            Lib.Class1.CenteringText("│                       │");
-            Lib.Class1.CenteringText("│  Diamonds(▼) - gives  │");
-            Lib.Class1.CenteringText("│ 250 points            │");
-            Lib.Class1.CenteringText("│                       │");
-            Lib.Class1.CenteringText("│  Mines(*) - kills you │");
-            Lib.Class1.CenteringText("│ when you are near it  │");
-            Lib.Class1.CenteringText("│                       │");
-            Lib.Class1.CenteringText("│  The Player(x) - you, │");
-            Lib.Class1.CenteringText("│ the player            │");
-            Lib.Class1.CenteringText("│                       │");
-            Lib.Class1.CenteringText("└───────────────────────┘");
-            Console.ReadLine();
-            Menu();
-            return;
-        }
+
         static void Menu()
         {
-            Console.CursorVisible = false;
             Console.Clear();
-            Console.WriteAscii("         Miner");
-            Lib.Class1.CenteringText("┌────────────────────┐");
-            Lib.Class1.CenteringText("│                    │");
-            Lib.Class1.CenteringText("│ 1 - Start The Game │");
-            Lib.Class1.CenteringText("│ 2 - How to play    │");
-            Lib.Class1.CenteringText("│                    │");
-            Lib.Class1.CenteringText("└────────────────────┘");
+            Colorful.Console.WriteAscii("         Miner");
+            Miner.CenterText("┌────────────────────┐");
+            Miner.CenterText("│ 1 - Start The Game │");
+            Miner.CenterText("│ 2 - How to play    │");
+            Miner.CenterText("│                    │");
+            Miner.CenterText("└────────────────────┘");
             Console.WriteLine("");
 
             string input = Console.ReadLine();
             if (input == "1")
             {
-                Lib.Class1.Randomize(layer1);
-                Lib.Class1.Randomize(layer2);
-                Lib.Class1.Randomize(layer3);
-                Lib.Class1.Randomize(layer4);
-                Lib.Class1.Randomize(layer5);
-                Lib.Class1.Randomize(layer6);
-                Lib.Class1.Randomize(layer7);
-                Lib.Class1.Randomize(layer8);
-                Lib.Class1.Randomize(layer9);
-                Start();
+                return;
             }
-            else if(input == "2")
+            else if(input== "2")
             {
-                HowToPlay();
+                Miner.HowToPlay();
             }
         }
     }
